@@ -1,0 +1,23 @@
+#principal{
+    background-color: aqua;
+}
+
+#titulo{
+    background-color: red;
+}
+
+#principalTarea{
+    background-color: blue;
+}
+
+#cabeceraTarea{
+    background-color: green;
+}
+
+#tareas{
+    background-color: white;
+}
+
+.tarea{
+    background-color: yellow;
+}
