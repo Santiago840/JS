@@ -13,14 +13,17 @@
       </div>
       <div id="principalTarea">
         <div id="cabecearaTarea">
-          <input id="nombre" type="text" />
+          <input
+            onkeydown="teclaTarea(event, 'nombre')"
+            id="nombre"
+            type="text"
+          />
           <button onclick="agregarTarea()">Agregar</button>
+          <button onclick="limpiarLista('listaTarea')">Borrar Lista</button>
         </div>
         <div id="tareas">
           <div class="tarea">
-            <ul id="listaTarea">
-                
-            </ul>
+            <ul id="listaTarea"></ul>
           </div>
         </div>
       </div>

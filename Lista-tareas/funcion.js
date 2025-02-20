@@ -4,6 +4,7 @@ function agregarTarea() {
 
     if (validacionNombre(nombre)) {
         crearCard(nombre, lista);
+        refrescarCampo('nombre');
     }
 }
 
@@ -19,6 +20,25 @@ function validacionNombre(nombre) {
     }
 }
 
+function teclaTarea(event, idElemento){
+    let tecla = event.key;
+
+    if(tecla == 'Enter'){
+        agregarTarea();
+        refrescarCampo(idElemento);
+    }
+}
+
+function refrescarCampo(idElemento){
+    document.getElementById(idElemento).value = "";
+}
+
+function limpiarLista(idElemento){
+    const lista = document.getElementById(idElemento);
+
+    lista.replaceChildren();
+}
+
 function crearCard(nombre, lista) {
     const texto = document.createElement('p');
     texto.textContent = nombre;
@@ -32,7 +52,7 @@ function crearCard(nombre, lista) {
     botonEliminar.onclick = function () {
         eliminarTarea(card);
     }
-    
+
     card.appendChild(texto);
     card.appendChild(botonEliminar);
 
