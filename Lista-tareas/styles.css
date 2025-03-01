@@ -1,23 +1,68 @@
-#principal{
-    background-color: aqua;
+h1{
+    text-align: center;
 }
 
-#titulo{
-    background-color: red;
+#contenedorEncabezado{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    align-content: space-between;
 }
 
-#principalTarea{
-    background-color: blue;
+#txtbuscar{
+    order:3;
+    align-self: flex-end;
 }
 
-#cabeceraTarea{
-    background-color: green;
+#txtAgregar{
+    order:0;
 }
 
-#tareas{
-    background-color: white;
+.camposTexto{
+    border-bottom: 2px solid;
+    border-color: lightsteelblue;
 }
 
-.tarea{
-    background-color: yellow;
+.camposTexto::placeholder{
+    font-style: italic;
 }
+
+.camposTexto:hover{
+    border-color: blue;
+}
+
+.camposText:active{
+    border-color: darkblue;
+}
+
+#contenedorTareas{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#contenedorTareasPendientes{
+    align-content: flex-start;
+}
+
+#contenedorTareasCompletadas{
+    align-self: flex-end;
+}
+
+.listaTarea{
+    border-radius: 10px;
+    background-color: darkslategray;
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+

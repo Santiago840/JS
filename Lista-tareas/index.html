@@ -1,31 +1,34 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="funcion.js"></script>
-    <title>To-Do</title>
   </head>
   <body>
-    <div id="principal">
-      <div id="titulo">
-        <h1>To do List</h1>
+    <div id="contenedorPrincipal">
+      <h1 id="titulo">To-Do List</h1>
+      <div id="contenedorEncabezado">
+        <input
+          type="text"
+          class="camposTexto"
+          id="txtAgregar"
+          placeholder="Agregar..."
+        />
+        <img id="imgAgregar" src="img.png" alt="imagen de más" />
+        <input
+          type="text"
+          class="camposTexto"
+          id="txtBuscar"
+          placeholder="Buscar..."
+        />
+        <img id="imgBuscar" src="imgBuscar.png" alt="imagen de buscar" />
       </div>
-      <div id="principalTarea">
-        <div id="cabecearaTarea">
-          <input
-            onkeydown="teclaTarea(event, 'nombre')"
-            id="nombre"
-            type="text"
-          />
-          <button onclick="agregarTarea()">Agregar</button>
-          <button onclick="limpiarLista('listaTarea')">Borrar Lista</button>
-        </div>
-        <div id="tareas">
-          <div class="tarea">
-            <ul id="listaTarea"></ul>
-          </div>
-        </div>
+      <div id="contenedorTareas">
+        <div class="listaTarea" id="contenedorTareasPendientes"></div>
+        <div class="listaTarea" id="contenedorTareasCompletadas"></div>
       </div>
     </div>
   </body>
