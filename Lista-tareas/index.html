@@ -5,26 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="funcion.js"></script>
   </head>
   <body>
     <div id="contenedorPrincipal">
       <h1 id="titulo">To-Do List</h1>
       <div id="contenedorEncabezado">
-        <input
-          type="text"
-          class="camposTexto"
-          id="txtAgregar"
-          placeholder="Agregar..."
-        />
-        <img id="imgAgregar" src="img.png" alt="imagen de más" />
-        <input
-          type="text"
-          class="camposTexto"
-          id="txtBuscar"
-          placeholder="Buscar..."
-        />
-        <img id="imgBuscar" src="imgBuscar.png" alt="imagen de buscar" />
+        <div id="contenedorCampoTextoAgregar">
+          <input
+            type="text"
+            class="camposTexto"
+            id="txtAgregar"
+            placeholder="Agregar..."
+            maxlength="40"
+          />
+          <i class="fa-solid fa-magnifying-glass fa-beat" id="imgAgregar"></i>
+        </div>
+        <div id="contenedorCampoTextoBuscar">
+          <input
+            type="text"
+            class="camposTexto"
+            id="txtBuscar"
+            placeholder="Buscar..."
+            maxlength="40"
+          />
+          <i class="fa-solid fa-magnifying-glass fa-beat" id="imgBuscar"></i>
+        </div>
       </div>
       <div id="contenedorTareas">
         <div class="listaTarea" id="contenedorTareasPendientes"></div>

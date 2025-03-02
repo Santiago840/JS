@@ -1,68 +1,67 @@
-h1{
+h1 {
     text-align: center;
 }
 
-#contenedorEncabezado{
+#contenedorEncabezado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-inline: 100px;
+}
+
+#contenedorCampoTextoAgregar, #contenedorCampoTextoBuscar{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
     align-content: space-between;
+    flex-wrap: nowrap;
 }
 
-#txtbuscar{
-    order:3;
-    align-self: flex-end;
+.camposTexto {
+    border-bottom: 2px solid lightskyblue;
+    outline: none;
+    /* elimina contorno azul predeterminado */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 300px;
 }
 
-#txtAgregar{
-    order:0;
-}
-
-.camposTexto{
-    border-bottom: 2px solid;
-    border-color: lightsteelblue;
-}
-
-.camposTexto::placeholder{
+.camposTexto::placeholder {
     font-style: italic;
 }
 
-.camposTexto:hover{
+.camposTexto:hover {
     border-color: blue;
 }
 
-.camposText:active{
+.camposTexto:focus {
     border-color: darkblue;
 }
 
-#contenedorTareas{
-    display:flex;
+#contenedorTareas {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#contenedorTareasPendientes{
+#contenedorTareasPendientes {
     align-content: flex-start;
 }
 
-#contenedorTareasCompletadas{
+#contenedorTareasCompletadas {
     align-self: flex-end;
 }
 
-.listaTarea{
+.listaTarea {
     border-radius: 10px;
     background-color: darkslategray;
-    display:flex;
+    display: flex;
     justify-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
 }
-
-
-
-
-
-
