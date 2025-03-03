@@ -23,7 +23,7 @@
             placeholder="Agregar..."
             maxlength="40"
           />
-          <i class="fa-solid fa-magnifying-glass fa-beat" id="imgAgregar"></i>
+          <i class="fa-solid fa-plus" id="imgAgregar"></i>
         </div>
         <div id="contenedorCampoTextoBuscar">
           <input
@@ -37,8 +37,16 @@
         </div>
       </div>
       <div id="contenedorTareas">
-        <div class="listaTarea" id="contenedorTareasPendientes"></div>
-        <div class="listaTarea" id="contenedorTareasCompletadas"></div>
+        <div class="listaTarea" id="contenedorTareasPendientes">
+          <div class="tarea">
+            <input type="checkbox" name="chbChecar" id="chbChecar">
+            <input type="text" name="txtTarea" class="textoTarea" id="txtTarea" disabled>
+            <button type="button" class="botones fa-solid fa-edit" id="btnEditar"></button>
+            <button type="button" class="botones fa-solid fa-trash" id="btnEliminar"></button>
+          </div>          
+        </div>
+        <div class="listaTarea" id="contenedorTareasCompletadas">
+        </div>
       </div>
     </div>
   </body>
