@@ -23,7 +23,11 @@
             placeholder="Agregar..."
             maxlength="40"
           />
-          <i class="fa-solid fa-plus" id="imgAgregar"></i>
+          <button
+            class="botones fa-solid fa-plus"
+            type="button"
+            id="btnAgregar"
+          ></button>
         </div>
         <div id="contenedorCampoTextoBuscar">
           <input
@@ -38,14 +42,43 @@
       </div>
       <div id="contenedorTareas">
         <div class="listaTarea" id="contenedorTareasPendientes">
-          <div class="tarea">
-            <input type="checkbox" name="chbChecar" id="chbChecar">
-            <input type="text" name="txtTarea" class="textoTarea" id="txtTarea" disabled>
-            <button type="button" class="botones fa-solid fa-edit" id="btnEditar"></button>
-            <button type="button" class="botones fa-solid fa-trash" id="btnEliminar"></button>
-          </div>          
-        </div>
+          <!-- <div class="tarea">
+            <input type="checkbox" name="chbChecar" id="chbChecar" />
+            <input
+              type="text"
+              name="txtTarea"
+              class="textoTarea"
+              id="txtTarea2"
+              disabled
+            />
+            <button
+              type="button"
+              class="botones fa-solid fa-edit"
+              id="btnEditar"
+            ></button>
+            <button
+              type="button"
+              class="botones btnEliminar fa-solid fa-trash"
+              id="btnEliminarPendiente"
+            ></button>
+          </div> -->
+          </div>
         <div class="listaTarea" id="contenedorTareasCompletadas">
+          <div class="tarea">
+            <input type="checkbox" name="chbChecar" id="chbChecar" />
+            <input
+              type="text"
+              name="txtTarea"
+              class="textoTarea"
+              id="txtTarea"
+              disabled
+            />
+            <button
+              type="button"
+              class="botones btnEliminar fa-solid fa-trash"
+              id="btnEliminarCompletada"
+            ></button>
+          </div>
         </div>
       </div>
     </div>

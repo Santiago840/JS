@@ -5,9 +5,10 @@ h1 {
 #contenedorEncabezado {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding-inline: 100px;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-inline-end: 45px;
+    margin-inline-start: 45px;
 }
 
 #contenedorCampoTextoAgregar,
@@ -27,7 +28,7 @@ h1 {
     border-top: none;
     border-left: none;
     border-right: none;
-    width: 300px;
+    width: 250px;
 }
 
 .camposTexto::placeholder {
@@ -47,22 +48,9 @@ h1 {
     border-color: darkblue;
 }
 
-.camposTexto:focus~#imgAgregar,
-.camposTexto:focus~#imgBuscar {
+.camposTexto:focus~#btnAgregar,
+.camposTexto:focus~#btnBuscar {
     border-color: darkblue;
-}
-
-#imgAgregar {
-    align-self: flex-end;
-    border-bottom: 2px solid lightskyblue;
-}
-
-#contenedorTareas {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 #contenedorTareasPendientes {
@@ -73,52 +61,50 @@ h1 {
     align-self: flex-end;
 }
 
-
-#imgBuscar {
-    align-self: flex-end;
-}
-
 #contenedorTareas {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    height: 320px;
+    max-width: 100%;
+    max-height: 100vw;
     padding-block: 30px;
     padding-inline: 30px;
 }
 
 .listaTarea {
     background-color: cadetblue;
-    width: 300px;
+    width: 45%;
     height: 40vw;
     border-radius: 1em;
     padding-block: 1em;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: top;
+    flex-wrap: nowrap;
+    align-content: stretch;
 }
 
 #contenedorTareasPendientes {
-    align-self: flex-start;
+    align-self: stretch;
 }
 
 #contenedorTareasCompletadas {
-    align-self: flex-end;
+    align-self: stretch;
 }
 
 .tarea {
     align-self: top;
-    flex-grow: 1;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-    align-content: cneter;
+    align-content: space-around;
     border-block: 1px solid black;
-    margin-block: 5px;
-    padding-block: 10px;
+    margin-block: 5px; 
+    padding-block: 5px;
 }
 
 .textoTarea {
@@ -128,36 +114,43 @@ h1 {
     border-bottom: solid 2px black;
 }
 
-.textoTarea:disabled {
-    opacity: 0.4;
-    color: darkgrey;
-}
-
-.textTarea:enabled {
+.textoTarea:read-only {
     color: black;
-    opacity: 1;
+    border: none;
 }
 
-#chbChecar {
+.textoTarea:read-write {
+    color: black;
+    border-bottom: 2px solid black; 
+}
+
+input[type="checkBox"] {
     cursor: pointer;
 }
 
-.botones{
+.botones {
     background-color: transparent;
-    border:none;
+    border: none;
     outline: none;
     cursor: pointer;
 }
 
-.botones:hover{
+.botones:hover {
     transition: 700ms;
-    color:green;
 }
 
-#btnEditar:hover{
+.btnEditar:hover {
     color: darkblue;
 }
 
-#btnEliminar:hover{
+.btnEliminar:hover {
     color: red;
+}
+
+#btnAgregar:hover {
+    color: green;
+}
+
+#btnBuscar {
+    align-self: flex-end;
 }
