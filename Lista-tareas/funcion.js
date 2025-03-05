@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const txtAgregar = document.getElementById("txtAgregar");
     const contP = document.getElementById("contenedorTareasPendientes");
     let valorOriginal;
+    let estadoEditar;
     propiedadesTexto();
     agregarListeners(btnAgregar, txtAgregar, contP);
 });
@@ -17,15 +18,15 @@ function propiedadesTexto() {
 
 function agregarListeners(btnAgregar, txtAgregar, contP) {
     btnAgregar.addEventListener("click", () => {
-        if (verificarCampoVacio(txtAgregar)) {
-            agregarTarea(txtAgregar, contP);
+        if (verificarCampoVacio(txtAgregar.value)) {
+            agregarTarea(txtAgregar.value, contP);
         }
     });
 
     txtAgregar.addEventListener("keydown", (event) => {
         if (presionarEnter(event)) {
-            if (verificarCampoVacio(txtAgregar)) {
-                agregarTarea(txtAgregar, contP);
+            if (verificarCampoVacio(txtAgregar.value)) {
+                agregarTarea(txtAgregar.value, contP);
             }
         }
     });
@@ -38,19 +39,29 @@ function agregarTarea(tarea, contP) {
     let btnEditar = document.createElement("button");
     let btnEliminar = document.createElement("button");
     let numero = obtenerNumeroTareas(contP);
-    valorOriginal = tarea.value;
+    valorOriginal = tarea;
 
     contTarea.classList.add("tarea");
     contTarea.id = "contTarea" + numero;
 
+
     chbChecar.type = "checkbox";
     chbChecar.name = "chbChecar";
     chbChecar.id = "chbChecar" + numero;
+    chbChecar.value = "completado";
+    chbChecar.addEventListener("change", () => {
+        const contC = document.getElementById("contenedorTareasCompletadas");
+        contP.removeChild(contTarea);
+        chbChecar.checked = true;
+        chbChecar.disabled = true;
+        // agregarTarea(tarea, contC);
+        contC.appendChild(contTarea);
+    });
 
     txtTarea.classList.add("textoTarea", "camposTexto");
     txtTarea.type = "text";
     txtTarea.readOnly = true;
-    txtTarea.value = tarea.value.trim();
+    txtTarea.value = tarea.trim();
     txtTarea.id = "txtTarea" + numero;
     txtTarea.maxLength = 35;
     txtTarea.addEventListener("click", () => {
@@ -88,14 +99,14 @@ function agregarTarea(tarea, contP) {
 
     contP.appendChild(contTarea);
 
-    limpiarCampo(tarea);
+    limpiarCampo();
 }
 
 function editarTarea(event, tarea, valorOriginal) {
     if (presionarEnter(event)) {
-        if (!verificarCampoVacio(tarea)) {
+        if (!verificarCampoVacio(tarea.value)) {
             tarea.value = valorOriginal.trim();
-        }else{
+        } else {
             console.log(tarea.value.trim());
             tarea.value = tarea.value.trim();
         }
@@ -117,23 +128,24 @@ function obtenerNumeroTareas(contP) {
 }
 
 function verificarCampoVacio(campo) {
-    if (campo.value.trim() === "") {
+    if (campo.trim() === "") {
         return false;
     } else {
         return true;
     }
 }
 
-function limpiarCampo(campo) {
-    campo.value = "";
+function limpiarCampo() {
+    const txtAgregar = document.getElementById("txtAgregar");
+    txtAgregar.value = "";
 }
 
 function limpiarLista() {
     const listaTarea = document.getElementById("contenedorTareasPendientes");
 
-    if (listaTarea.hasChildNodes()) {
+    if (listaTarea.children.length > 1) {
         alertaEliminar(listaTarea, "¿Estás seguro de eliminar todos las tareas de la lista?");
-    }else{
+    } else {
         alert('No hay tareas a eliminar');
     }
 }
@@ -141,17 +153,17 @@ function limpiarLista() {
 function alertaEliminar(lista, mensaje) {
     let alerta = window.confirm(mensaje);
     if (alerta) {
-        while (lista.hasChildNodes()) {
+        while (lista.children.length > 1) {
             lista.removeChild(lista.lastChild);
         }
-    }else{
+    } else {
         console.log("No se eliminaron las tareas");
     }
 }
 
-function alertaEliminarTarea(tarea){
+function alertaEliminarTarea(tarea) {
     let alerta = window.confirm("¿Estás seguro de eliminar esta tarea?");
-    if(alerta){
+    if (alerta) {
         tarea.remove();
     }
 }

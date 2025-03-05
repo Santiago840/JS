@@ -90,6 +90,7 @@ h1 {
 
 #contenedorTareasPendientes {
     align-self: stretch;
+    overflow:auto;
 }
 
 #contenedorTareasCompletadas {
@@ -157,9 +158,7 @@ input[type="checkBox"] {
 }
 
 #btnLimpiar{
-    position: absolute;
-    left: 42vw;
-    margin-top:5px;
+    align-self: flex-end;
     rotate: 195deg;
 }
 
