@@ -24,6 +24,7 @@ h1 {
 .camposTexto {
     border-bottom: 2px solid lightskyblue;
     outline: none;
+    
     /* elimina contorno azul predeterminado */
     border-top: none;
     border-left: none;
@@ -153,4 +154,15 @@ input[type="checkBox"] {
 
 #btnBuscar {
     align-self: flex-end;
+}
+
+#btnLimpiar{
+    position: absolute;
+    left: 42vw;
+    margin-top:5px;
+    rotate: 195deg;
+}
+
+#btnLimpiar:hover{
+    color:firebrick;
 }

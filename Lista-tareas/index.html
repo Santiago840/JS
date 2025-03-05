@@ -21,7 +21,6 @@
             class="camposTexto"
             id="txtAgregar"
             placeholder="Agregar..."
-            maxlength="40"
           />
           <button
             class="botones fa-solid fa-plus"
@@ -35,13 +34,18 @@
             class="camposTexto"
             id="txtBuscar"
             placeholder="Buscar..."
-            maxlength="40"
           />
           <i class="fa-solid fa-magnifying-glass fa-beat" id="imgBuscar"></i>
         </div>
       </div>
       <div id="contenedorTareas">
-        <div class="listaTarea" id="contenedorTareasPendientes">
+        <button
+          class="botones fa-solid fa-brush"
+          id="btnLimpiar"
+          type="button"
+          onclick="limpiarLista()"
+        ></button>
+        <div class="listaTarea" id="contenedorTareasPendientes"></div>
           <!-- <div class="tarea">
             <input type="checkbox" name="chbChecar" id="chbChecar" />
             <input
@@ -62,7 +66,7 @@
               id="btnEliminarPendiente"
             ></button>
           </div> -->
-          </div>
+        
         <div class="listaTarea" id="contenedorTareasCompletadas">
           <div class="tarea">
             <input type="checkbox" name="chbChecar" id="chbChecar" />
